@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        {% include "::navbarTop.html.twig" %}
+        <div style="border: 2px double #000000; padding-left: 25px; background-color: steelblue; font-family: 'Courier New', Courier, monospace">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </body>
+
+    <footer>
+        {% block javascripts %}
+            <link href=" {{ asset('js/bootstrap.min.js') }}" rel="stylesheet" />
+        {% endblock %}
+    </footer>
+</html>

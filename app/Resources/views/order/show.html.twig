@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="border: 2px double #000000; padding-left: 25px; background-color: steelblue; font-family: 'Courier New', Courier, monospace">
+        <h1 style="text-align: center; padding-right: 25px">My order</h1>
+        <table style="text-align: left">
+            <tbody>
+                <th>Order</th>
+                <tr>
+                    <th>Ref</th>
+                    <td>{{ order.ref }}</td>
+                </tr>
+                {% if order.customer %}
+                    <tr>
+                        <th>Customer</th>
+                        <td>{{ order.customer.name }}</td>
+                    </tr>
+                {% endif %}
+                {% if orderdetails %}
+                    <tr>
+                        <th>Order Details</th>
+                        <table style="text-align: left; padding-left: 20px;">
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Amount</th>
+                            </tr>
+                            {% for orderdetail in orderdetails %}
+                                <tr>
+                                    {% if invoice == null %}
+                                        <td><a href="{{ path('orderdetail_show', { 'id': orderdetail.id }) }}">{{ orderdetail.product.name }}</a></td>
+                                    {% else %}
+                                        <td>{{ orderdetail.product.name }}</td>
+                                    {% endif %}
+                                    <td>{{ orderdetail.product.price}}</td>
+                                    <td>{{ orderdetail.amount}}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </tr>
+                {% endif %}
+                {% if deliveries %}
+                    <tr>
+                        <b><th>Deliveries</th></b>
+                        <table style="text-align: left; padding-left: 20px;">
+                            <tr>
+                                <th>Reference</th>
+                                <th>Date deliveries</th>
+                            </tr>
+                            {% for delivery in deliveries %}
+                                <tr>
+                                    {% if invoice == null %}
+                                        <td><a href="{{ path('delivery_show', { 'id': delivery.id }) }}">{{ delivery.ref}}</a></td>
+                                    {% else %}
+                                        <td>{{ delivery.ref}}</td>
+                                    {% endif %}
+                                    <td>{{ delivery.dateDelivery|date('Y-m-d') }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </tr>
+                {% endif %}
+                {% if invoice %}
+                    <tr>
+                        <b><th>Invoice</th></b>
+                        <table style="text-align: left; padding-left: 20px;">
+                            <tr>
+                                <th>Reference</th>
+                                <th>Date invoice</th>
+                                <th>Total</th>
+                            </tr>
+                            <tr>
+                                <td>{{ invoice.ref}}</td>
+                                <td>{{ invoice.dateInvoice|date('Y-m-d') }}</td>
+                                <td>{{ invoice.total }}</td>
+                            </tr>
+                        </table>
+                {% endif %}
+            </tbody>
+        </table>
+        </br>
+        <ul>
+            <li>
+                <a href="{{ path('order_index') }}">Back to the list</a>
+            </li>
+            {% if invoice == null %}
+                <li>
+                    <a href="{{ path('orderdetail_new', { 'id': order.id }) }}">Add products</a>
+                </li>
+                <li>
+                    <a href="{{ path('invoice_new', { 'id': order.id }) }}">Add invoice</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+{% endblock %}

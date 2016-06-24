@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>OrderDetail</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ orderDetail.id }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ orderDetail.amount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('order_show', { 'id': orderDetail.order.id }) }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('orderdetail_edit', { 'id': orderDetail.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

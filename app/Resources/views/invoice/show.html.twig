@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Invoice</h1>
+    <div style="border: 2px double #000000; padding-left: 25px; background-color: steelblue; font-family: 'Courier New', Courier, monospace">
+        <h1 style="text-align: center; padding-right: 25px">My order</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Ref</th>
+                        <td>{{ invoice.ref }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datedelivery</th>
+                        <td>{% if invoice.dateDelivery %}{{ invoice.dateInvoice|date('Y-m-d') }}{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </h1>
+    </div>
+    </br>
+    <div style="border: 2px double #000000; padding-left: 25px; background-color: steelblue; font-family: 'Courier New', Courier, monospace">
+        <h1 style="text-align: center; padding-right: 25px">Holidays</h1>
+            <ul>
+                <li>
+                    <a href="{{ path('invoice_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    <a href="{{ path('invoice_edit', { 'id': invoice.id }) }}">Edit</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </h1>
+    </div>
+{% endblock %}
