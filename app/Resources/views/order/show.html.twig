@@ -54,7 +54,7 @@
                                     {% else %}
                                         <td>{{ delivery.ref}}</td>
                                     {% endif %}
-                                    <td>{{ delivery.dateDelivery|date('Y-m-d') }}</td>
+                                    <td>{{ delivery.dateDelivery|date("Y-m-d\\TH:i:sP") }}</td>
                                 </tr>
                             {% endfor %}
                         </table>
@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td>{{ invoice.ref}}</td>
-                                <td>{{ invoice.dateInvoice|date('Y-m-d') }}</td>
+                                <td>{{ invoice.dateInvoice|date("Y-m-d\\TH:i:sP") }}</td>
                                 <td>{{ invoice.total }}</td>
                             </tr>
                         </table>
@@ -96,7 +96,6 @@
                     {{ form_end(delete_form) }}
                 </li>
             {% endif %}
-
         </ul>
     </div>
 {% endblock %}

@@ -3,12 +3,25 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Customer;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Order;
 use AppBundle\Form\OrderType;
+
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations\Get;
+use FOS\RestBundle\Controller\Annotations\Route;
+use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\Request\ParamFetcherInterface;
+use FOS\RestBundle\Util\Codes;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 /**
  * Order controller.
@@ -20,8 +33,7 @@ class OrderController extends Controller
     /**
      * Lists all Order entities.
      *
-     * @Route("/", name="order_index")
-     * @Method("GET")
+     * @Get("/", name="order_index")
      */
     public function indexAction()
     {
@@ -76,7 +88,6 @@ class OrderController extends Controller
         } else {
             $invoice = null;
         }
-
 
         return $this->render('order/show.html.twig', array(
             'order' => $order,
@@ -139,7 +150,7 @@ class OrderController extends Controller
      *
      * @param Order $order The Order entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return \Symfony\Component\Form\Form The formuse FOS\RestBundle\Controller\Annotations as Rest,
      */
     private function createDeleteForm(Order $order)
     {

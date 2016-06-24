@@ -1,0 +1,17 @@
+orders:
+    type: rest
+    resource:     "AppBundle:OrderRest"
+    name_prefix:  api_
+
+#    pattern:  /api/orders
+#    defaults: { _controller: AppBundle:Order:getOrders, _format: ~ }
+#    requirements:
+#        _method: GET
+
+order_get:
+    type : rest
+    resource:     "AppBundle:OrderRest"
+    name_prefix:  api_
+    requirements:
+        _method: GET
+        id: "\d+"

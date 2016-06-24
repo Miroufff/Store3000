@@ -17,7 +17,7 @@
             <tr>
                 <td><a href="{{ path('delivery_show', { 'id': delivery.id }) }}">{{ delivery.id }}</a></td>
                 <td>{{ delivery.ref }}</td>
-                <td>{% if delivery.dateDelivery %}{{ delivery.dateDelivery|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if delivery.dateDelivery %}{{ delivery.dateDelivery|date("Y-m-d\\TH:i:sP") }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

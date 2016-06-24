@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Datedelivery</th>
-                <td>{% if delivery.dateDelivery %}{{ delivery.dateDelivery|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if delivery.dateDelivery %}{{ delivery.dateDelivery|date("Y-m-d\\TH:i:sP") }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

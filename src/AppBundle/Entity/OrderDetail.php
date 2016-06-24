@@ -10,12 +10,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class OrderDetail
  *
  * @ORM\Entity
  * @ORM\Table(name="t_order_detail")
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class OrderDetail
@@ -26,6 +29,7 @@ class OrderDetail
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -33,6 +37,7 @@ class OrderDetail
      * @var float
      *
      * @ORM\Column(name="amount", type="float")
+     * @Expose
      */
     private $amount;
 
@@ -49,6 +54,7 @@ class OrderDetail
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product")
      * @ORM\JoinColumn(name="id_product", referencedColumnName="id")
+     * @Expose
      */
     private $product;
 

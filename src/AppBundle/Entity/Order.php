@@ -10,6 +10,8 @@ namespace AppBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class Order
@@ -17,6 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="t_order")
  * @ORM\HasLifecycleCallbacks()
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class Order
@@ -27,6 +30,7 @@ class Order
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -34,6 +38,7 @@ class Order
      * @var string
      *
      * @ORM\Column(name="ref", type="string", length=100)
+     * @Expose
      */
     private $ref;
 
@@ -41,6 +46,7 @@ class Order
      * @var DateTime
      *
      * @ORM\Column(name="date_creation", type="date")
+     * @Expose
      */
     private $dateCreation;
 
@@ -48,6 +54,7 @@ class Order
      * @var mixed
      *
      * @ORM\OneToMany(targetEntity="OrderDetail", mappedBy="order")
+     * @Expose
      */
     private $orderDetails;
 
@@ -55,6 +62,7 @@ class Order
      * @var mixed
      *
      * @ORM\OneToMany(targetEntity="Delivery", mappedBy="order")
+     * @Expose
      */
     private $deliveries;
 
@@ -63,6 +71,7 @@ class Order
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Customer")
      * @ORM\JoinColumn(name="id_customer", referencedColumnName="id")
+     * @Expose
      */
     private $customer;
 

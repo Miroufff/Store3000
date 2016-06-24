@@ -1,0 +1,15 @@
+AppBundle\Entity\Order:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        ref:
+            expose: true
+        dateCreation:
+            expose: true
+        customer:
+            expose: true
+        deliveries:
+            expose: true
+        orderDetails:
+            expose: true

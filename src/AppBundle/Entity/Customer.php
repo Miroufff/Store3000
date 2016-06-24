@@ -9,12 +9,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class Customer
  *
  * @ORM\Entity
  * @ORM\Table(name="t_customer")
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class Customer
@@ -25,6 +28,7 @@ class Customer
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -32,6 +36,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="ref", type="string", length=100)
+     * @Expose
      */
     private $ref;
 
@@ -39,6 +44,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Expose
      */
     private $name;
 
@@ -46,6 +52,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=100)
+     * @Expose
      */
     private $address;
 
@@ -53,6 +60,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="postal_code", type="string", length=10)
+     * @Expose
      */
     private $postalCode;
 
@@ -60,6 +68,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=20)
+     * @Expose
      */
     private $city;
 
@@ -67,6 +76,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="telephone", type="string", length=20)
+     * @Expose
      */
     private $telephone;
 
@@ -74,6 +84,7 @@ class Customer
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=50)
+     * @Expose
      */
     private $email;
 

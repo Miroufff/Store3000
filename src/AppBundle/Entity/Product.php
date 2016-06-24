@@ -9,12 +9,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class Product
  *
  * @ORM\Entity
  * @ORM\Table(name="t_product")
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class Product
@@ -25,6 +28,7 @@ class Product
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -32,6 +36,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=250)
+     * @Expose
      */
     private $name;
 
@@ -39,6 +44,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=500)
+     * @Expose
      */
     private $description;
 
@@ -46,6 +52,7 @@ class Product
      * @var float
      *
      * @ORM\Column(name="price", type="float")
+     * @Expose
      */
     private $price;
 

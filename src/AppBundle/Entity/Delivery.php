@@ -10,6 +10,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class Delivery
@@ -17,7 +19,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
  * @ORM\Entity
  * @ORM\Table(name="t_delivery")
  * @ORM\HasLifecycleCallbacks()
-
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class Delivery
@@ -28,6 +30,7 @@ class Delivery
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -35,6 +38,7 @@ class Delivery
      * @var string
      *
      * @ORM\Column(name="ref", type="string", length=100)
+     * @Expose
      */
     private $ref;
 
@@ -42,6 +46,7 @@ class Delivery
      * @var DateTime
      *
      * @ORM\Column(name="date_delivery", type="date")
+     * @Expose
      */
     private $dateDelivery;
 
@@ -58,6 +63,7 @@ class Delivery
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Invoice")
      * @ORM\JoinColumn(name="id_invoice", referencedColumnName="id")
+     * @Expose
      */
     private $invoice;
 

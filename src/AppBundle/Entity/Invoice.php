@@ -10,6 +10,8 @@ namespace AppBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * Class Invoice
@@ -17,6 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="t_invoice")
  * @ORM\HasLifecycleCallbacks()
+ * @ExclusionPolicy("all")
  * @package AppBundle\Entity
  */
 class Invoice
@@ -27,6 +30,7 @@ class Invoice
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
@@ -34,6 +38,7 @@ class Invoice
      * @var string
      *
      * @ORM\Column(name="ref", type="string", length=100)
+     * @Expose
      */
     private $ref;
 
@@ -41,6 +46,7 @@ class Invoice
      * @var DateTime
      *
      * @ORM\Column(name="date_invoice", type="date")
+     * @Expose
      */
     private $dateInvoice;
 
@@ -48,6 +54,7 @@ class Invoice
      * @var float
      *
      * @ORM\Column(name="total", type="float")
+     * @Expose
      */
     private $total;
 
