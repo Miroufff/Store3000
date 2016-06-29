@@ -17,9 +17,8 @@ set :log_level, :info
 
 set :composer_install_flags, '--no-dev --prefer-dist --no-interaction --optimize-autoloader'
 
-set :linked_files, %w{config/database.yml config/config.yml}
-set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
-set :shared_files, ["app/config/parameters.yml"]
+set :linked_files, %w{app/config/parameters.yml config/database.yml config/config.yml}
+set :linked_dirs, %w{app/logs bin log tmp vendor/bundle public/system}
 set :writable_dirs, ["app/cache", "app/logs"]
 
 SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
