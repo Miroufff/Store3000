@@ -2820,3 +2820,63 @@
   INFO [fda3b784] Running /usr/bin/env setfacl -Rdm u:davenel:rwx /var/www/html/store/shared/app/logs /var/www/html/store/releases/20160630153924/app/cache as davenel@192.168.13.161
   INFO [fda3b784] Finished in 0.009 seconds with exit status 0 (successful).
   INFO [b8280f09] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader as davenel@192.168.13.161
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-30 17:44:14 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b7ac63ac] Running /usr/bin/env mkdir -p /tmp/store/ as davenel@192.168.13.161
+  INFO [b7ac63ac] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO Uploading /tmp/store/git-ssh.sh 100.0%
+  INFO [d7f169b3] Running /usr/bin/env chmod +rx /tmp/store/git-ssh.sh as davenel@192.168.13.161
+  INFO [d7f169b3] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [942a0669] Running /usr/bin/env git ls-remote --heads git@github.com:Miroufff/Store3000.git as davenel@192.168.13.161
+  INFO [942a0669] Finished in 1.661 seconds with exit status 0 (successful).
+  INFO [b0fc06b7] Running /usr/bin/env mkdir -p /var/www/html/store/shared /var/www/html/store/releases as davenel@192.168.13.161
+  INFO [b0fc06b7] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [98bffaae] Running /usr/bin/env mkdir -p /var/www/html/store/shared/app/logs /var/www/html/store/shared/bin /var/www/html/store/shared/log /var/www/html/store/shared/tmp /var/www/html/store/shared/vendor/bundle /var/www/html/store/shared/public/system as davenel@192.168.13.161
+  INFO [98bffaae] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [18f69d18] Running /usr/bin/env mkdir -p /var/www/html/store/shared/app/config /var/www/html/store/shared/config as davenel@192.168.13.161
+  INFO [18f69d18] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/store/repo
+  INFO [cb20e534] Running /usr/bin/env git remote update --prune as davenel@192.168.13.161
+  INFO [cb20e534] Finished in 2.923 seconds with exit status 0 (successful).
+  INFO [2ddd501f] Running /usr/bin/env mkdir -p /var/www/html/store/releases/20160630154416 as davenel@192.168.13.161
+  INFO [2ddd501f] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [77c6ad9c] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/store/releases/20160630154416 as davenel@192.168.13.161
+  INFO [77c6ad9c] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [32c56ab6] Running /usr/bin/env echo "8cafec361acfd38599ec65590a72ff424c66d01b" >> REVISION as davenel@192.168.13.161
+  INFO [32c56ab6] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [ac880f47] Running /usr/bin/env mkdir -p /var/www/html/store/releases/20160630154416/app/config /var/www/html/store/releases/20160630154416/config as davenel@192.168.13.161
+  INFO [ac880f47] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [ed013adb] Running /usr/bin/env ln -s /var/www/html/store/shared/app/config/parameters.yml /var/www/html/store/releases/20160630154416/app/config/parameters.yml as davenel@192.168.13.161
+  INFO [ed013adb] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [26a3a1be] Running /usr/bin/env ln -s /var/www/html/store/shared/config/database.yml /var/www/html/store/releases/20160630154416/config/database.yml as davenel@192.168.13.161
+  INFO [26a3a1be] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [c67099b9] Running /usr/bin/env ln -s /var/www/html/store/shared/config/config.yml /var/www/html/store/releases/20160630154416/config/config.yml as davenel@192.168.13.161
+  INFO [c67099b9] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [34224b7d] Running /usr/bin/env mkdir -p /var/www/html/store/releases/20160630154416/app /var/www/html/store/releases/20160630154416 /var/www/html/store/releases/20160630154416/vendor /var/www/html/store/releases/20160630154416/public as davenel@192.168.13.161
+  INFO [34224b7d] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [f15384fc] Running /usr/bin/env rm -rf /var/www/html/store/releases/20160630154416/app/logs as davenel@192.168.13.161
+  INFO [f15384fc] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [e6c1bcfc] Running /usr/bin/env ln -s /var/www/html/store/shared/app/logs /var/www/html/store/releases/20160630154416/app/logs as davenel@192.168.13.161
+  INFO [e6c1bcfc] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [1c5a375b] Running /usr/bin/env ln -s /var/www/html/store/shared/bin /var/www/html/store/releases/20160630154416/bin as davenel@192.168.13.161
+  INFO [1c5a375b] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [d7850cae] Running /usr/bin/env rm -rf /var/www/html/store/releases/20160630154416/log as davenel@192.168.13.161
+  INFO [d7850cae] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [b2c847e7] Running /usr/bin/env ln -s /var/www/html/store/shared/log /var/www/html/store/releases/20160630154416/log as davenel@192.168.13.161
+  INFO [b2c847e7] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [62d78694] Running /usr/bin/env ln -s /var/www/html/store/shared/tmp /var/www/html/store/releases/20160630154416/tmp as davenel@192.168.13.161
+  INFO [62d78694] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [7f40fcab] Running /usr/bin/env ln -s /var/www/html/store/shared/vendor/bundle /var/www/html/store/releases/20160630154416/vendor/bundle as davenel@192.168.13.161
+  INFO [7f40fcab] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [c6f54f72] Running /usr/bin/env ln -s /var/www/html/store/shared/public/system /var/www/html/store/releases/20160630154416/public/system as davenel@192.168.13.161
+  INFO [c6f54f72] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [95af6ecf] Running /usr/bin/env rm -rf /var/www/html/store/releases/20160630154416/app/cache as davenel@192.168.13.161
+  INFO [95af6ecf] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [f112e8d0] Running /usr/bin/env mkdir -pv app/cache as davenel@192.168.13.161
+  INFO [f112e8d0] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [5d01fc9b] Running /usr/bin/env setfacl -Rm u:davenel:rwx /var/www/html/store/shared/app/logs /var/www/html/store/releases/20160630154416/app/cache as davenel@192.168.13.161
+  INFO [5d01fc9b] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [6d9ed4b8] Running /usr/bin/env setfacl -Rdm u:davenel:rwx /var/www/html/store/shared/app/logs /var/www/html/store/releases/20160630154416/app/cache as davenel@192.168.13.161
+  INFO [6d9ed4b8] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [035127b5] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader as davenel@192.168.13.161
