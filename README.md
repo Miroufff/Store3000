@@ -92,6 +92,9 @@ Il y a deux façon d'installer l'application :
 
             Ajouter la clef ssh de l'utilisateur qui va déployer le projet dans ~/.ssh/authorized_key
 
+            Créer la base de donnée
+                mysql -u root -p -e "create database store"; 
+
             Ajouter le dossier déploiement
 
             cd /var/www/html/
@@ -146,3 +149,11 @@ Il y a deux façon d'installer l'application :
             Déploiement du projet en production
 
                 cap production deploy
+
+            Se connecter au serveur
+                
+                cd /var/www/store/current/
+                
+            Vérifier que l'on retrouve bien un dossier avec la date du déploiement
+            
+                php app/console doctrine:schema:update --force
