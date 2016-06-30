@@ -2,7 +2,7 @@ set :branch, "master"
 set :application, "store"
 set :deploy_to,   "/var/www/html/store"
 
-server 'davenel@192.168.13.161', :roles => [:app, :web, :db], :primary => true
+server '%user@host%', :roles => [:app, :web, :db], :primary => true
 
 # server-based syntax
 # ======================
