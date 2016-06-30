@@ -79,7 +79,9 @@ Il y a deux façon d'installer l'application :
             apache
             php
             mySql
-            gitAccès au dépôt
+            git
+        
+        Accès au dépôt
 
             cd SylvainDavenelJobeet
             composer
