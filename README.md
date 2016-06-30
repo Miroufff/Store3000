@@ -21,8 +21,11 @@ Documentation contenant l'ensemble des commandes devant être jouer pour passer 
 (Ne pas oublier de lancer wamp server)
 
 Il y a deux façon d'installer l'application :
+
     - Manuellement
+
         Requierement :
+
             apache
             php
             mySql
