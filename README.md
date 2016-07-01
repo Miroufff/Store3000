@@ -14,7 +14,7 @@ Store - Symfony 2.8
 - Script déploiement
 - Outil de d'ajout de numéro invoice, delivery, order, customer
 
-Répertoire github contenant le projet jobeet : https://github.com/Miroufff/Store3000
+Répertoire github contenant le projet : https://github.com/Miroufff/Store3000
 
 Documentation contenant l'ensemble des commandes devant être jouer pour passer une installation viable
 
