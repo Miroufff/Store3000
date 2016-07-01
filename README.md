@@ -28,7 +28,7 @@ Il y a deux façon d'installer l'application :
 
             apache
             php
-            mySql
+            mysql
             git
             composer
 
@@ -78,12 +78,8 @@ Il y a deux façon d'installer l'application :
 
             apache
             php
-            mySql
+            mysql
             git
-        
-        Accès au dépôt
-
-            cd SylvainDavenelJobeet
             composer
             ruby > 2.0
             gems
